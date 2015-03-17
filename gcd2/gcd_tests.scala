@@ -1,6 +1,6 @@
 import org.scalatest._
 
-import gcd._
+import gcd2._
 
 class EuclidTests extends FlatSpec with Matchers {
 
