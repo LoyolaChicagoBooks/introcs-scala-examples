@@ -1,6 +1,6 @@
 import edu.luc.cs.ui._
 
-object check_digits1 {
+object check_digits3 {
   def main(args: Array[String]) {
     val s = promptLine("Enter a line: ")
     if (isDigits(s))
@@ -10,14 +10,7 @@ object check_digits1 {
   }
 
   def isDigits(s : String) : Boolean = {
-    var allDigitsSoFar = true
-    var i = 0
-    while (i < s.length && allDigitsSoFar) {
-      if (s(i) < '0' || s(i) > '9') {
-        allDigitsSoFar = false
-      }
-      i += 1
-    }
-    allDigitsSoFar
-  }
+    val digits = s.takeWhile( c => c >= '0' && c <= '9' )
+    digits.length = s.length
+  } 
 }
