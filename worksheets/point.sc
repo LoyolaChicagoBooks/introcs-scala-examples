@@ -1,34 +1,31 @@
 /* begin-class-Point */
 
-class Point(initial_x: Double, initial_y: Double) {
+class Point(initial_x: Double, initial_y: Double):
+
    var x: Double = initial_x
    var y: Double = initial_y
 
-   def move(dx: Double, dy: Double) {
+   def move(dx: Double, dy: Double) =
       x = x + dx
       y = y + dy
-   }
 
-   def distanceToOrigin() : Double = {
+   def distanceToOrigin() : Double =
       math.sqrt(x * x + y * y)
-   }
 
-   def distanceTo(p : Point) = {
+   def distanceTo(p : Point) =
       math.sqrt( (p.x - x) * (p.x - x) + (p.y - y) * (p.y - y) )
-   }
 
-   def add(p : Point) = {
+   def add(p : Point) =
       x = x + p.x
       y = y + p.y
       this
-   }
 
-   def +(p : Point) = {
+   def +(p : Point) =
       add(p)
-   }
 
    override def toString(): String = s"($x, $y)";
-}
+
+end Point
 
 /* end-class-Point */
 
@@ -56,8 +53,9 @@ println(s"p.add(q) = $pointSum; p + q = $pointSumOp")
 
 
 /* begin-object-PointDemo */
-object PointDemo {
-   def apply() {
+object PointDemo:
+
+   def apply() =
       val p = new Point(2, 3)
       val q = new Point(-2, 3)
 
@@ -77,8 +75,6 @@ object PointDemo {
       val pointSumOp = p + q
 
       println(s"p.add(q) = $pointSum; p + q = $pointSumOp")
-   }
-}
 
 PointDemo()
 
